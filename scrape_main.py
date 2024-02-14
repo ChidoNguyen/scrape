@@ -13,6 +13,7 @@ def robotparser_setup(url):
 	rule_bot.set_url(target_site +"/robots.txt")
 	rule_bot.read()
 	return rule_bot
+
 def req_limitations(rule_bot,user_agent):
 	#request limitations"
 	rLimit = rule_bot.request_rate(user_agent)
@@ -32,8 +33,13 @@ def req_limitations(rule_bot,user_agent):
 	return limit_doc
 
 def main():
+	u_agent = "*" #generic for everyone unless specified i.e. user_agent = GPTChat
 	url = "https://www.espn.com"
 	pars_bot = robotparser_setup(url)
 	fence = req_limitations(pars_bot,"*")
-	print(fence)
+	#hard coded for now , can add user input later for if fetching is allowed
+	if pars_bot.can_fetch(u_agent, "https://www.espn.com/nba"):
+		print("do work")
+	else:
+		print("cannot fetch specified path")
 main()

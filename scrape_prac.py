@@ -12,6 +12,4 @@ page = urlopen(target_site)
 html_bytes = page.read()
 html = html_bytes.decode('utf-8')
 
-print(html)
-
-
+#urllib has built in robot parser

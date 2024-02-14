@@ -1,6 +1,7 @@
 #Place Holder
 
 scrape_prac : just a playground to test diff scraping commands, outputs, inputs, whats returned etc.
+
 scrape_main : slowly build up a webscraper
 
 to-do:

@@ -29,8 +29,5 @@ def parse_NBA(url = "https://www.espn.com"):
 	for i in soup.find_all('a'):
 		if i.get('href') == '/nba/':
 			return url + i.get('href')
-def testNBA():
-	print(parse_NBA())
-		
-testNBA()		
-#parse_NBA()
+	return ""
+

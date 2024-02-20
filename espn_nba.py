@@ -41,7 +41,7 @@ def starting_soup(site_URL):
 			soup = BeautifulSoup(espn_nba, 'lxml')
 	except urllib.error.HTTPError as e:
 		print(e)
-	except urllib.error.URLerror as u:
+	except urllib.error.URLError as u:
 		print(u)
 
 	return soup
